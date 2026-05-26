@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -37,22 +37,22 @@
   --color-gold: var(--gold);
   --color-silver: var(--silver);
   --color-bronze: var(--bronze);
-  --font-display: 'Big Shoulders Display', sans-serif;
-  --font-serif: 'Lora', serif;
-  --font-sans: 'Outfit', sans-serif;
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-serif: "Lora", serif;
+  --font-sans: "Outfit", sans-serif;
 }
 
 :root {
   --radius: 0.25rem;
   --cream: oklch(0.953 0.018 80);
-  --ink: oklch(0.20 0.01 60);
+  --ink: oklch(0.2 0.01 60);
   --saffron: oklch(0.62 0.19 35);
   --amber: oklch(0.78 0.16 70);
   --forest: oklch(0.32 0.06 160);
   --teal: oklch(0.42 0.06 195);
   --gold: oklch(0.78 0.13 85);
   --silver: oklch(0.78 0.01 250);
-  --bronze: oklch(0.58 0.10 50);
+  --bronze: oklch(0.58 0.1 50);
 
   --background: var(--cream);
   --foreground: var(--ink);
@@ -68,32 +68,47 @@
   --muted-foreground: oklch(0.48 0.012 60);
   --accent: var(--amber);
   --accent-foreground: var(--ink);
-  --destructive: oklch(0.55 0.20 25);
+  --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: var(--cream);
   --border: oklch(0.85 0.015 70);
   --input: oklch(0.88 0.012 70);
   --ring: var(--saffron);
 }
 
-.dark { color-scheme: light; }
+.dark {
+  color-scheme: light;
+}
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-serif);
     font-feature-settings: "ss01", "liga";
   }
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
     line-height: 0.95;
   }
-  .font-display { font-family: var(--font-display); }
-  .font-sans-ui { font-family: var(--font-sans); }
-  .font-serif-body { font-family: var(--font-serif); }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-sans-ui {
+    font-family: var(--font-sans);
+  }
+  .font-serif-body {
+    font-family: var(--font-serif);
+  }
 }
 
 @layer utilities {
@@ -102,7 +117,8 @@
   }
   .grain::after {
     content: "";
-    position: absolute; inset: 0;
+    position: absolute;
+    inset: 0;
     pointer-events: none;
     opacity: 0.06;
     mix-blend-mode: multiply;
@@ -117,8 +133,12 @@
     animation: marquee 38s linear infinite;
   }
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
   .fade-up {
     opacity: 0;
@@ -126,10 +146,15 @@
     animation: fadeUp 0.9s ease forwards;
   }
   @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .btn-tactile {
-    transition: transform .18s ease, box-shadow .18s ease;
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
   }
   .btn-tactile:hover {
     transform: translate(-2px, -2px);
